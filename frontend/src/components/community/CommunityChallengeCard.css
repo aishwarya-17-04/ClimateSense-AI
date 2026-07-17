@@ -1,0 +1,93 @@
+/* src/components/community/CommunityChallengeCard.css */
+.challenge-glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.challenge-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.challenge-title {
+  font-size: 1.25rem;
+  color: #f8fafc;
+  font-weight: 700;
+  margin: 0;
+}
+
+.challenge-badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.challenge-description {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.challenge-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.meta-icon {
+  color: var(--accent-seafoam, #38bdf8);
+}
+
+.meta-item.reward {
+  grid-column: 1 / -1;
+  color: #f59e0b;
+}
+
+.meta-item.reward .meta-icon {
+  color: #f59e0b;
+}
+
+.btn-join-challenge {
+  width: 100%;
+  padding: 14px;
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--accent-seafoam, #38bdf8);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-join-challenge:hover {
+  background: var(--accent-seafoam, #38bdf8);
+  color: #0f172a;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}

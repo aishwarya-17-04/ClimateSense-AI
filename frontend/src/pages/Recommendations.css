@@ -1,0 +1,310 @@
+/* src/pages/Recommendations.css */
+
+.recommendations-page {
+  padding: 32px 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Header styling */
+.rec-header {
+  margin-bottom: 36px;
+}
+
+.rec-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.text-highlight {
+  color: var(--accent-seafoam, #38bdf8);
+}
+
+.subtitle {
+  color: var(--text-secondary, #94a3b8);
+  font-size: 1.1rem;
+}
+
+/* Summary Ribbon Glass Box */
+.summary-glass-card {
+  border-radius: var(--border-radius-lg, 24px) !important;
+  background: var(--glass-bg, rgba(255, 255, 255, 0.03)) !important;
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08)) !important;
+  margin-bottom: 40px;
+}
+
+.summary-metric-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 12px 16px;
+}
+
+.metric-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.metric-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+.score-glow { background: rgba(56, 189, 248, 0.12); color: var(--accent-seafoam, #38bdf8); }
+.emission-glow { background: rgba(148, 163, 184, 0.12); color: #94a3b8; }
+.savings-glow { background: rgba(16, 185, 129, 0.12); color: var(--accent-green, #10b981); }
+.rating-glow { background: rgba(167, 139, 250, 0.12); color: #a78bfa; }
+
+.green-glow {
+  color: var(--accent-green, #10b981);
+}
+
+.text-rating {
+  color: #a78bfa;
+}
+
+.metric-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-metric-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary, #94a3b8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.summary-metric-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.unit-label {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-secondary, #94a3b8);
+}
+
+/* Category Filter Bar */
+.filters-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08));
+  color: var(--text-secondary, #94a3b8);
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filter-tab:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.filter-tab.active {
+  background: var(--accent-seafoam, #38bdf8);
+  color: #09151e;
+  border-color: var(--accent-seafoam, #38bdf8);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+  font-weight: 600;
+}
+
+/* Recommendations Grid */
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.no-filter-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary, #94a3b8);
+  font-size: 1.1rem;
+}
+
+/* Empty State / Error Cards */
+.empty-panel,
+.error-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.empty-glass-card,
+.error-glass-card {
+  max-width: 480px;
+  text-align: center;
+  padding: 48px 32px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: var(--border-radius-lg, 24px) !important;
+  background: var(--glass-bg, rgba(255, 255, 255, 0.03)) !important;
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08)) !important;
+}
+
+.empty-leaf-icon {
+  font-size: 3rem;
+  color: var(--accent-green, #10b981);
+  margin-bottom: 24px;
+  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.2));
+}
+
+.error-icon {
+  font-size: 3rem;
+  color: #ef4444;
+  margin-bottom: 24px;
+}
+
+.empty-glass-card h3,
+.error-glass-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.empty-glass-card p,
+.error-glass-card p {
+  color: var(--text-secondary, #94a3b8);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.btn-action,
+.btn-retry {
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-action {
+  background: var(--accent-seafoam, #38bdf8);
+  color: #09151e;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.btn-retry {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.btn-retry:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-seafoam, #38bdf8);
+}
+
+/* SKELETON LOADER ANIMATIONS */
+.loading-skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.skeleton-summary-box {
+  height: 96px;
+  border-radius: var(--border-radius-lg, 24px);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.skeleton-filters-box {
+  height: 44px;
+  width: 400px;
+  max-width: 100%;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.skeleton-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.skeleton-rec-card {
+  height: 240px;
+  border-radius: var(--border-radius-md, 16px);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skeleton-line {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  height: 14px;
+}
+
+.skeleton-line.short { width: 30%; height: 28px; border-radius: 14px; }
+.skeleton-line.long { width: 90%; }
+.skeleton-line.medium { width: 60%; }
+.skeleton-line.footer { width: 100%; height: 32px; margin-top: auto; }
+
+.pulse {
+  animation: pulseAnimation 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseAnimation {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.4; }
+}
+
+/* Responsive CSS Layouts */
+@media (max-width: 1024px) {
+  .recommendations-page {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .summary-metric-block {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary-metric-block {
+    grid-template-columns: 1fr;
+  }
+}

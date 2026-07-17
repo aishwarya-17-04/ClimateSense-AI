@@ -1,0 +1,200 @@
+/* src/components/carbon/Carbon.css */
+
+.carbon-page-container {
+  padding: 32px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.carbon-header {
+  margin-bottom: 32px;
+}
+
+.carbon-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.text-highlight {
+  color: var(--accent-seafoam, #38bdf8);
+}
+
+.subtitle {
+  color: var(--text-secondary, #94a3b8);
+  font-size: 1.1rem;
+}
+
+/* Form Styles */
+.form-glass-card {
+  padding: 32px;
+  border-radius: var(--border-radius-lg, 24px);
+  background: var(--glass-bg, rgba(255, 255, 255, 0.03));
+}
+
+.carbon-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.form-section.double-section {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.input-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-icon {
+  color: var(--accent-seafoam, #38bdf8);
+  font-size: 1.2rem;
+}
+
+.section-title h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.input-group-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.input-field {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-field label {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #94a3b8);
+  font-weight: 500;
+}
+
+/* Glass UI Elements */
+.glass-select,
+.glass-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-sm, 12px);
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+.glass-select option {
+  background: #112a38; /* Matches Dark Ocean background */
+  color: #ffffff;
+}
+
+.glass-select:focus,
+.glass-input:focus {
+  border-color: var(--accent-seafoam, #38bdf8);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+}
+
+/* Buttons */
+.calculate-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+  border: none;
+  color: #ffffff;
+  border-radius: var(--border-radius-md, 16px);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.2);
+  transition: all 0.3s ease;
+}
+
+.calculate-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Icons Animations */
+.spinner-icon.spinning {
+  animation: spin 1s linear infinite;
+}
+
+/* Error Alert */
+.error-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--border-radius-sm, 12px);
+  color: #f87171;
+}
+
+.alert-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive CSS Layouts */
+@media (max-width: 1024px) {
+  .carbon-page-container {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-section.double-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 24px;
+  }
+  
+  .form-section.double-section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}

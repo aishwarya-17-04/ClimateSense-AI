@@ -1,0 +1,202 @@
+/* src/components/challenge/ChallengeCard.css */
+.main-challenge-card {
+  padding: 32px !important;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg, 24px) !important;
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.challenge-bg-glow {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* Category Accent Map */
+.transport-glow { background: #38bdf8; }
+.electricity-glow { background: #eab308; }
+.water-glow { background: #0ea5e9; }
+.food-glow { background: #10b981; }
+.waste-glow { background: #ef4444; }
+
+.transport-accent { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+.electricity-accent { background: rgba(234, 179, 8, 0.15); color: #eab308; }
+.water-accent { background: rgba(14, 165, 233, 0.15); color: #0ea5e9; }
+.food-accent { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+.waste-accent { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+
+.challenge-card-header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px;
+}
+
+.challenge-badge, .difficulty-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.diff-easy { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+.diff-medium { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+.diff-hard { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+
+.challenge-card-body {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 32px;
+}
+
+.challenge-card-body h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.challenge-card-body p {
+  font-size: 1.05rem;
+  color: var(--text-secondary, #94a3b8);
+  line-height: 1.6;
+}
+
+.challenge-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-icon { font-size: 1.5rem; }
+.saving-color { color: #38bdf8; }
+.xp-color { color: #f59e0b; }
+.time-color { color: #10b981; }
+
+.stat-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-val {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stat-lbl {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #94a3b8);
+  text-transform: uppercase;
+}
+
+/* Actions & Buttons */
+.challenge-card-actions {
+  position: relative;
+  z-index: 1;
+}
+
+.action-row {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-accept, .btn-complete, .btn-skip {
+  flex: 1;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-accept {
+  background: var(--accent-seafoam, #38bdf8);
+  color: #09151e;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+}
+
+.btn-complete {
+  background: var(--accent-green, #10b981);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+}
+
+.btn-skip {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex: 0.5; /* Takes less space than accept */
+}
+
+.btn-accept:disabled, .btn-complete:disabled, .btn-skip:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status-banner {
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.banner-success {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.banner-neutral {
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .challenge-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .action-row {
+    flex-direction: column-reverse;
+  }
+  .btn-skip { flex: 1; }
+}

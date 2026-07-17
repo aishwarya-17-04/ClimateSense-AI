@@ -1,0 +1,122 @@
+/* src/components/recommendation/RecommendationCard.css */
+
+.recommendation-card-wrapper {
+  height: 100%;
+}
+
+.rec-card {
+  padding: 24px !important;
+  background: var(--glass-bg, rgba(255, 255, 255, 0.03)) !important;
+  border-radius: var(--border-radius-md, 16px) !important;
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08)) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.rec-card:hover {
+  border-color: rgba(56, 189, 248, 0.25) !important;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.05);
+}
+
+/* Category Badges & Iconic Accents */
+.rec-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  align-self: flex-start;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Accent Variations mapping theme colors */
+.transport-accent   { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+.electricity-accent { background: rgba(234, 179, 8, 0.15); color: #eab308; }
+.water-accent       { background: rgba(14, 165, 233, 0.15); color: #0ea5e9; }
+.food-accent        { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+.waste-accent       { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+
+.rec-icon {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+/* Core Content */
+.rec-content {
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.rec-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary, #f8fafc);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.rec-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #94a3b8);
+  line-height: 1.5;
+}
+
+/* Footer layout */
+.rec-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 16px;
+}
+
+.rec-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 0.725rem;
+  text-transform: uppercase;
+  color: var(--text-secondary, #94a3b8);
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.saving-highlight {
+  color: var(--accent-seafoam, #38bdf8);
+}
+
+.stat-icon {
+  font-size: 0.85rem;
+}
+
+/* Difficulty semantic badges */
+.difficulty-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  width: max-content;
+}
+
+.diff-easy   { background: rgba(16, 185, 129, 0.12); color: #10b981; }
+.diff-medium { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
+.diff-hard   { background: rgba(239, 68, 68, 0.12); color: #ef4444; }

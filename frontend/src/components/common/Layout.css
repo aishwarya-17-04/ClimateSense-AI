@@ -1,0 +1,38 @@
+/* src/components/common/Layout.css */
+.layout-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--bg-dark-ocean, linear-gradient(135deg, #09151e 0%, #112a38 50%, #1a4252 100%));
+}
+
+.layout-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Prevents flexbox children from overflowing */
+  height: 100vh;
+}
+
+.main-viewport {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Custom scrollbar for the main viewport */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.main-viewport::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-viewport::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}

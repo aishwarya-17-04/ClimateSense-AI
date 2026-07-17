@@ -1,0 +1,64 @@
+/* src/components/community/BadgeCard.css */
+.badge-glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.badge-glass-card.locked {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+.badge-glass-card.unlocked {
+  background: linear-gradient(145deg, rgba(56, 189, 248, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.badge-icon-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.badge-icon {
+  font-size: 2.5rem;
+  color: var(--accent-seafoam, #38bdf8);
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
+}
+
+.badge-status {
+  position: absolute;
+  bottom: -4px;
+  right: -8px;
+  background: #0f172a;
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-unlocked { color: #10b981; font-size: 0.8rem; }
+.status-locked { color: #94a3b8; font-size: 0.8rem; }
+
+.badge-title {
+  font-size: 1rem;
+  color: #f8fafc;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.badge-desc {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
