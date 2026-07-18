@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const baseURL = (
-  import.meta.env.VITE_API_BASE_URL || "https://climatesense-ai.onrender.com/api"
-).replace(/\/+$/, "");
+const defaultBaseURL = "https://climatesense-ai.onrender.com/api";
+const configuredBaseURL = import.meta.env?.VITE_API_BASE_URL;
+const baseURL = String(configuredBaseURL || defaultBaseURL).replace(/\/+$/, "");
 
 const api = axios.create({
   baseURL,
