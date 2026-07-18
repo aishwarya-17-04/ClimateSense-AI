@@ -203,5 +203,6 @@ Climate Action
 # Author
 
 Aishwarya K P
+Ameya S
 
 Built as an AI-powered sustainability assistant using LangGraph and Gemini AI.
