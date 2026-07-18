@@ -1,14 +1,13 @@
-import axios from 'axios';
+import axios from "axios";
 
 const baseURL = "https://climatesense-ai.onrender.com/api";
 
 const api = axios.create({
   baseURL,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
-
 api.interceptors.request.use((config) => {
   const token = typeof window !== 'undefined' ? window.localStorage.getItem('accessToken') : null;
 
