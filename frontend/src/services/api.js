@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const baseURL = "https://climatesense-ai.onrender.com/api";
+const baseURL = (
+  import.meta.env.VITE_API_BASE_URL || "https://climatesense-ai.onrender.com/api"
+).replace(/\/+$/, "");
 
 const api = axios.create({
   baseURL,
