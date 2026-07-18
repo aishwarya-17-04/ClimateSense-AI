@@ -104,16 +104,45 @@ WORKFLOW.md
 ## Backend
 
 ```bash
-cd backend
-
 python -m venv venv
 
 source venv/bin/activate
 
 pip install -r requirements.txt
 
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
+
+---
+
+## Render Backend Deployment
+
+Create a Python web service from the repository root.
+
+Build command:
+
+```bash
+pip install -r requirements.txt
+```
+
+Start command:
+
+```bash
+uvicorn app.main:app --host 0.0.0.0 --port $PORT
+```
+
+Required environment variables:
+
+```env
+DATABASE_URL=your_postgres_url
+SECRET_KEY=your_secret_key
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL=gemini-2.5-flash
+FRONTEND_URL=https://your-frontend-domain
+```
+
+The `.python-version` file pins Render to Python 3.12 so binary wheels are used
+for packages such as `pydantic-core` instead of attempting a Rust build.
 
 ---
 
